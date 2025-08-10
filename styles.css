@@ -1022,3 +1022,69 @@ footer {
         font-size: 13px;
     }
 }
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+}
+
+/* Specific brand colors for each contact link */
+.email-link {
+    color: #EA4335;
+    border-color: #EA4335;
+}
+
+.email-link:hover {
+    background: #EA4335;
+    color: var(--bg-primary);
+    border-color: #EA4335;
+    box-shadow: 0 0 20px rgba(234, 67, 53, 0.4);
+}
+
+.linkedin-link {
+    color: #0A66C2;
+    border-color: #0A66C2;
+}
+
+.linkedin-link:hover {
+    background: #0A66C2;
+    color: var(--bg-primary);
+    border-color: #0A66C2;
+    box-shadow: 0 0 20px rgba(10, 102, 194, 0.4);
+}
+
+.github-link {
+    color: #333;
+    border-color: #333;
+}
+
+.github-link:hover {
+    background: #333;
+    color: var(--bg-primary);
+    border-color: #333;
+    box-shadow: 0 0 20px rgba(51, 51, 51, 0.4);
+}
+
+.phone-link {
+    color: #34C759;
+    border-color: #34C759;
+}
+
+.phone-link:hover {
+    background: #34C759;
+    color: var(--bg-primary);
+    border-color: #34C759;
+    box-shadow: 0 0 20px rgba(52, 199, 89, 0.4);
+}
+
+/* Light theme adjustments */
+[data-theme="light"] .github-link {
+    color: #24292e;
+    border-color: #24292e;
+}
+
+[data-theme="light"] .github-link:hover {
+    background: #24292e;
+    color: var(--bg-primary);
+    border-color: #24292e;
+}
