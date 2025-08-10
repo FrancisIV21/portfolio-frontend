@@ -1022,69 +1022,124 @@ footer {
         font-size: 13px;
     }
 }
-.contact-icon {
-    width: 24px;
-    height: 24px;
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    padding: 15px;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
     transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Specific brand colors for each contact link */
-.email-link {
-    color: #EA4335;
-    border-color: #EA4335;
+/* PNG icon styling */
+.contact-icon {
+    width: 32px;
+    height: 32px;
+    transition: all 0.3s ease;
+    filter: brightness(0.9);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
+/* Individual brand hover effects */
 .email-link:hover {
-    background: #EA4335;
-    color: var(--bg-primary);
     border-color: #EA4335;
-    box-shadow: 0 0 20px rgba(234, 67, 53, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(234, 67, 53, 0.3);
 }
 
-.linkedin-link {
-    color: #0A66C2;
-    border-color: #0A66C2;
+.email-link:hover .contact-icon {
+    transform: scale(1.1);
+    filter: brightness(1.1) drop-shadow(0 0 8px rgba(234, 67, 53, 0.4));
 }
 
 .linkedin-link:hover {
-    background: #0A66C2;
-    color: var(--bg-primary);
     border-color: #0A66C2;
-    box-shadow: 0 0 20px rgba(10, 102, 194, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(10, 102, 194, 0.3);
 }
 
-.github-link {
-    color: #333;
-    border-color: #333;
+.linkedin-link:hover .contact-icon {
+    transform: scale(1.1);
+    filter: brightness(1.1) drop-shadow(0 0 8px rgba(10, 102, 194, 0.4));
 }
 
 .github-link:hover {
-    background: #333;
-    color: var(--bg-primary);
     border-color: #333;
-    box-shadow: 0 0 20px rgba(51, 51, 51, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(51, 51, 51, 0.3);
 }
 
-.phone-link {
-    color: #34C759;
-    border-color: #34C759;
+.github-link:hover .contact-icon {
+    transform: scale(1.1);
+    filter: brightness(1.1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
 }
 
 .phone-link:hover {
-    background: #34C759;
-    color: var(--bg-primary);
     border-color: #34C759;
-    box-shadow: 0 0 20px rgba(52, 199, 89, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(52, 199, 89, 0.3);
+}
+
+.phone-link:hover .contact-icon {
+    transform: scale(1.1);
+    filter: brightness(1.1) drop-shadow(0 0 8px rgba(52, 199, 89, 0.4));
+}
+
+/* Retro scan line effect on hover */
+.contact-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+}
+
+.contact-link:hover::before {
+    left: 100%;
+}
+
+/* Ensure icon stays above the scan line effect */
+.contact-icon {
+    position: relative;
+    z-index: 2;
 }
 
 /* Light theme adjustments */
-[data-theme="light"] .github-link {
-    color: #24292e;
+[data-theme="light"] .github-link:hover {
     border-color: #24292e;
+    box-shadow: 0 8px 25px rgba(36, 41, 46, 0.3);
 }
 
-[data-theme="light"] .github-link:hover {
-    background: #24292e;
-    color: var(--bg-primary);
-    border-color: #24292e;
+[data-theme="light"] .github-link:hover .contact-icon {
+    filter: brightness(1.1) drop-shadow(0 0 8px rgba(36, 41, 46, 0.4));
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .contact-link {
+        width: 60px;
+        height: 60px;
+        padding: 12px;
+    }
+    
+    .contact-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .contact-links {
+        gap: 20px;
+    }
 }
